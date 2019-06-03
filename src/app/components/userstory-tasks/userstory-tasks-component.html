@@ -1,0 +1,12 @@
+<!-- <ul *ngFor="let userstorytask of userStoryTasks">
+    <li>{{ userstorytask.title }}</li>
+</ul> -->
+<!-- now we need to get the data based on each as one component  -->
+<!-- here we need to pass the each task to the component -->
+<app-add-userstory-task (addUserstoryTask)="addUserstoryTask($event)"></app-add-userstory-task>
+<app-userstory-task 
+*ngFor="let userstorytask of userStoryTasks"  
+[userstorytask]="userstorytask"
+(deleteUserstoryTask)=(deleteUserstoryTask($event))>
+
+</app-userstory-task>
